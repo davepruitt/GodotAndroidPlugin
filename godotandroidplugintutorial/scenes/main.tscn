@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs8q1i1b7405u"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_3hwlc"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_3hwlc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VFlowContainer" type="VFlowContainer" parent="CanvasLayer"]
+offset_right = 525.0
+offset_bottom = 721.0
+
+[node name="Button" type="Button" parent="CanvasLayer/VFlowContainer"]
+layout_mode = 2
+text = "Click Me"
+
+[node name="Label" type="Label" parent="CanvasLayer/VFlowContainer"]
+layout_mode = 2
+text = "Hello"
+
+[connection signal="pressed" from="CanvasLayer/VFlowContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.davidpruitt.godotpluginhelloworld'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField("String", "GODOT_PLUGIN_NAME", "\"GodotAndroidPlugin\"")
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "pluginPackageName", "\"com.davidpruitt.godotpluginhelloworld\"")
+            buildConfigField("String", "pluginName", "\"GodotAndroidPlugin\"")
+        }
+        debug {
+            buildConfigField("String", "pluginPackageName", "\"com.davidpruitt.godotpluginhelloworld\"")
+            buildConfigField("String", "pluginName", "\"GodotAndroidPlugin\"")
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.godot
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}
