@@ -29,9 +29,9 @@ class AndroidExportPlugin extends EditorExportPlugin:
 	# Return the paths of the plugin's AAR binaries relative to the 'addons' directory.
 	func _get_android_libraries(platform, debug):
 		if debug:
-			return PackedStringArray(["GodotAndroidPlugin/app-debug.aar"])
+			return PackedStringArray(["GodotAndroidPlugin/godotandroidplugin.aar"])
 		else:
-			return PackedStringArray(["GodotAndroidPlugin/app-debug.aar"])
+			return PackedStringArray(["GodotAndroidPlugin/godotandroidplugin.aar"])
 
 	# Return the plugin's name.
 	func _get_name():
